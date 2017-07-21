@@ -1,0 +1,47 @@
+<section data-ng-controller="listAuthorsCtrl">
+<div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-hidden="true">&times;</button>
+	<h4 class="modal-title">Authors</h4>
+</div>
+<nav>
+	<ul class="pagination" ng-repeat="i in range">
+		<li>{{i|format}}</li>
+		<li><a href="javascript:;" ng-click="pageAuthor(i);">{{i}}</a></li>
+	</ul>
+</nav>
+<div class="modal-body">
+<!-- Default panel contents -->
+<!--    	<input type="text" placeholder="Search Authors by Name"
+   		id="authorToSearch" 
+   			class="col-lg-6 col-md-12 col-sm-12 col-xs-12" 
+   				onkeyup="javascript:searchAuthors();"/>
+ -->
+	<ng-lms-search-box searchtype="Authors" maxResult=5 ng-model="searchText"></ng-lms-search-box>
+	<div ng-lms-search-box></div>
+	<!-- ng-lms-search-box -->
+	<div class="ng-lms-search-box"></div>
+    	
+	<div id="authorList">
+	  	<table class="table">
+			<tr>
+				<th>Id</th>	
+				<th>Name</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			<tr ng-repeat="author in authors">
+				<td>{{author.authorId}}</td>
+				<td>{{author.authorName}}</td>
+				<td>
+					<a href="#" data-target="#myModal1" data-toggle="modal">
+						<i class="fa fa-pencil-square-o"></i>
+					</a>
+				</td>
+				<td><button type="button" class="btn btn-danger btn-circle"> 
+					<i class="fa fa-remove"></i></button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+</section>
