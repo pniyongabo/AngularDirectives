@@ -9,7 +9,7 @@ lmsModule.filter('format', function () {
 	});
 lmsModule.directive('ngLmsSearchBox', ['$http', function($http) {
 	  return {
-	      restrict: 'E','A','C','S'
+	      restrict: 'E',
 	      replace: 'true',
 	      scope: {
 	    	  searchtype: '@searchtype',
